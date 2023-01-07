@@ -33,18 +33,17 @@ function App() {
     }
   }
 
-  // const demo1Array = [1,2,3,4,5]
-  function handleClick (number ) { 
-    if (clickedNumber.length < 1) {
-      setClickedNumber([7])
-    } else {
-      const newArray = clickedNumber
-      console.log(newArray)
+  // function handleClick (number ) { 
+  //   if (clickedNumber.length < 1) {
+  //     setClickedNumber([7])
+  //   } else {
+  //     const newArray = clickedNumber
+  //     console.log(newArray)
 
-      setClickedNumber(newArray.push(7))
-  }
-  console.log(clickedNumber)
-  }
+  //     setClickedNumber(newArray.push(7))
+  // }
+  // console.log(clickedNumber)
+  // }
   return (
     <div className="App">
       <div className='h-screen w-full flex  justify-center place-items-center '>
