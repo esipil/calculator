@@ -172,7 +172,20 @@ function App() {
             }}>+</div>
           </div>
           <div className='h-24 flex space-x-2 mx-2 mt-4'>
-          <div className='w-1/4 h-full  flex justify-center place-items-center text-2xl  rounded-full shadow-2xl' >+/-</div>
+          <div className='w-1/4 h-full  flex justify-center place-items-center text-2xl  rounded-full shadow-2xl' onClick={() => {
+            if (secondClicked > 0) { 
+              let afterDelete = [...secondClicked]
+              afterDelete.pop()
+              setSecondClicked(afterDelete)
+            } else if (symbol){
+              setSymbol()
+              console.log(symbol)
+            }else {
+              let afterDelete = [...clickedNumber]
+              afterDelete.pop()
+              setClickedNumber(afterDelete)
+            }
+          }} >⌫</div>
             <div className='w-1/4 h-full  flex justify-center place-items-center text-2xl rounded-full shadow-2xl' onClick={() => {
             if (symbol) {
               const array = [...secondClicked, 0]
