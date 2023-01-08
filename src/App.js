@@ -7,6 +7,7 @@ function App() {
   const [symbol, setSymbol] = useState()
   const [secondClicked, setSecondClicked] = useState([])
   const [answer, setAnswer] = useState()
+  const [symbolTwo, setSymbolTwo] = useState()
 
   function twofiguresTotal (figure1, figure2, operator) {
     const left  = Number(figure1.join(''))
@@ -48,7 +49,7 @@ function App() {
     <div className="App">
       <div className='h-screen w-full flex  justify-center place-items-center '>
         <div className='w-full h-screen sm:mx-36 md:mx-40 lg:w-96'>
-          <div className='h-48 lg:mt-8'>{clickedNumber}{symbol}{secondClicked}</div>
+          <div className='h-48 lg:mt-8'>{clickedNumber}{symbol}{secondClicked}{symbolTwo}</div>
           <div className=' h-24 flex'> {answer}</div>
           <div className=' h-24 flex  space-x-2 mx-2 mt-4'>
           <div className='w-1/4 h-full text-center flex justify-center place-items-center text-2xl rounded-full shadow-2xl' onClick={() => {
@@ -62,8 +63,12 @@ function App() {
               // setSymbol('%')
             }}>%</div>
             <div className='w-1/4 h-full  flex justify-center place-items-center text-2xl rounded-full shadow-2xl' onClick={ () => {
-              setSymbol('÷')
-            }}>÷</div>
+              if (!symbol) {
+                setSymbol('÷')
+              } else {
+                setSymbolTwo("÷")
+              }
+              }}>÷</div>
           </div>
           <div className='  h-24 flex flex  space-x-2 mx-2 mt-4'>
           <div className='w-1/4 h-full  flex justify-center place-items-center text-2xl rounded-full shadow-2xl' onClick={() => {
@@ -97,7 +102,11 @@ function App() {
             }
           }}>9</div>
             <div className='w-1/4 h-full flex justify-center place-items-center text-2xl rounded-full shadow-2xl' onClick={ () => {
-              setSymbol('x')
+              if (!symbol) {
+                setSymbol('x')
+              } else {
+                setSymbolTwo("x")
+              }
             }} >×</div>
           </div>
           <div className='  h-24 flex  space-x-2 mx-2 mt-4'>
@@ -133,7 +142,11 @@ function App() {
               }
       }}>6</div>
             <div className='w-1/4 h-full  flex justify-center place-items-center text-2xl rounded-full shadow-2xl' onClick={ () => {
-              setSymbol('-')
+              if (!symbol) {
+                setSymbol('-')
+              } else {
+                setSymbolTwo("-")
+              }
             }}>-</div>
           </div>
           <div className=' h-24 flex  space-x-2 mx-2 mt-4'>
@@ -168,7 +181,11 @@ function App() {
             }
           }}>3</div>
             <div className='w-1/4 h-full  flex justify-center place-items-center text-2xl rounded-full shadow-2xl' onClick={() => {
-              setSymbol('+')
+              if (!symbol) {
+                setSymbol('+')
+              } else {
+                setSymbolTwo("+")
+              }
             }}>+</div>
           </div>
           <div className='h-24 flex space-x-2 mx-2 mt-4'>
