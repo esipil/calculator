@@ -50,12 +50,13 @@ function App() {
       <div className='h-screen w-full flex  justify-center place-items-center '>
         <div className='w-full h-screen sm:mx-36 md:mx-40 lg:w-96'>
           <div className='h-48 lg:mt-8'>{clickedNumber}{symbol}{secondClicked}{symbolTwo}</div>
-          <div className=' h-24 flex'> {answer}</div>
+          <div className=' h-24 flex'> { answer}</div>
           <div className=' h-24 flex  space-x-2 mx-2 mt-4'>
           <div className='w-1/4 h-full text-center flex justify-center place-items-center text-2xl rounded-full shadow-2xl' onClick={() => {
             setClickedNumber([])
             setSecondClicked([])
             setSymbol()
+            setSymbolTwo()
             setAnswer([])
           }} > c </div>
             <div className='w-1/4 h-full  flex justify-center place-items-center text-2xl	rounded-full shadow-2xl'>()</div>
